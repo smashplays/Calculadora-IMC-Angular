@@ -44,6 +44,7 @@ export class AppComponent {
   public addMessage(): void {
     if (
       !this.nuevoNombre ||
+      !this.genero ||
       this.altura <= 0 ||
       this.peso <= 0 ||
       isNaN(this.peso) ||
