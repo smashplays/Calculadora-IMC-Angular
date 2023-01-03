@@ -1,0 +1,11 @@
+img{
+    width: 80px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]:checked + label>img{
+    border: 3px solid red;
+}

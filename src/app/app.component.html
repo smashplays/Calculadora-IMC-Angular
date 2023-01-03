@@ -1,0 +1,44 @@
+<h1>{{ title }}</h1>
+<input type="text" [(ngModel)]="nuevoNombre" placeholder="Name" />
+  <div>
+    <input type="radio" name="genero" [(ngModel)]="genero" value="masculino" id="masculino">
+    <label for="masculino"><img src="../assets/images/symbol_male.png" alt="masculino"></label>
+    <input type="radio" name="genero" [(ngModel)]="genero" value="femenino" id="femenino">
+    <label for="femenino"><img src="../assets/images/female-sign.png" alt="femenino"></label>
+</div>
+
+<div>
+  <super-boton (click)="minusAltura()" texto="➖" color="red"></super-boton
+  ><input
+    type="text"
+    [(ngModel)]="altura"
+    placeholder="Height (cm)"
+  /><super-boton (click)="plusAltura()" texto="➕" color="green"></super-boton>
+  cm
+</div>
+
+<div>
+  <super-boton (click)="minusPeso()" texto="➖" color="red"></super-boton
+  ><input type="text" [(ngModel)]="peso" placeholder="Size (kg)" /><super-boton
+    (click)="plusPeso()"
+    texto="➕"
+    color="green"
+  ></super-boton>
+  kg
+</div>
+
+<div>
+  <super-boton texto="❌" color="gray" (click)="resetAll()">❌</super-boton>
+  <super-boton texto="✅" color="gray" (click)="addMessage()"></super-boton>
+</div>
+
+<div *ngIf="lastMessage">
+  <h2>{{ lastMessage.nombre }} {{ lastMessage.mensaje }}</h2>
+</div>
+
+<div>
+  <h2>Historial</h2>
+  <div *ngFor="let mensaje of historial">
+    <elemento-historial [mensaje]="mensaje"></elemento-historial>
+  </div>
+</div>
